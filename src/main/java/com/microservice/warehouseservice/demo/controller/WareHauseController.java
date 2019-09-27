@@ -11,7 +11,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/warehouse")
 public class WareHauseController {
-    private ItemServiceImpl itemService;
+    private final ItemServiceImpl itemService;
 
     @Autowired
     public WareHauseController(ItemServiceImpl itemService) {
@@ -20,7 +20,7 @@ public class WareHauseController {
 
     @PostMapping("/create")
     public void createItem(UUID id, String name, Integer amount) {
-        itemService.createItem(UUID id, String name, Integer amount);
+        itemService.createItem(id, name, amount);
     }
 
     @PostMapping("/add/id")

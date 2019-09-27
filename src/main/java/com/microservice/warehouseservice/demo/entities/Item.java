@@ -1,11 +1,16 @@
 package com.microservice.warehouseservice.demo.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.UUID;
 
+@Entity
 public class Item {
+    @Id
     private UUID id;
     private String name;
     private Integer amount;
+
     public Item(UUID id, String name, Integer amount) {
         this.id = id;
         this.name = name;

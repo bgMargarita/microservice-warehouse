@@ -9,7 +9,12 @@ import java.util.UUID;
 
 @Service
 public class ItemServiceImpl implements ItemService {
-    private ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
+
+    public ItemServiceImpl(ItemRepository itemRepository) {
+        this.itemRepository = itemRepository;
+    }
+
     @Override
     public void createItem(UUID id, String name, Integer amount) {
         Item item = new Item(id, name, amount);
